@@ -29,7 +29,9 @@
 
     <nav class="navbar navbar-expand-md navbar-light shadow-sm">
       <div class="container">
-        <%= link_to("Consultly", root_path , class: 'navbar-brand') %>
+        <%= link_to root_path, class: 'navbar-brand' do %>
+          Consultly
+        <% end %>
 
         <!-- Mobile view Toggler -->
 
@@ -48,13 +50,13 @@
           <ul class="navbar-nav ml-auto">
             <% if user_signed_in? %>
               <li class="nav-item">
-                
+                <%= link_to('Dashboard', meetings_path, class: 'nav-link') %>
               </li>
               <li class="nav-item">
-                
+                <%= link_to("Schedule new session", new_meeting_path , class: 'nav-link') unless admin? %>
               </li>
               <li class="nav-item">
-                
+                <%= link_to("Sign Out", destroy_user_session_path, method: :delete, class: 'nav-link') %>
               </li>
             <% else %>
               <li class="nav-item">

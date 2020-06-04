@@ -19,4 +19,4 @@ require("channels")
 
 // Get bootstrap up and running
 require('bootstrap/dist/js/bootstrap')
-require('trix')
+// require trix

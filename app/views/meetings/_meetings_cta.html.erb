@@ -1,0 +1,8 @@
+ <div class="meeting-w m-auto my-lg my-5 my-md-5 p-5 p-lg-5 bg-white rounded border border-light text-center shadow">
+ 	<%= image_tag "schedule.svg", alt: "Schedule", width: 300, class: 'mb-4' %>
+ 	<h4 class="text-gray-dark mb-5">
+ 		It looks like you haven't scheduled a session yet.
+ 	</h4>
+
+ 	<%= link_to("Schedule a new session", new_meeting_path, class: 'btn btn-primary py-2 px-5') %>
+ </div>
