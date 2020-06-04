@@ -1,24 +1,15 @@
-# README
+# CONSULTLY
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+A simple platform for appointment booking and management.
 
-Things you may want to cover:
+# GEMS
 
-* Ruby version
+* View gemfile from source
 
-* System dependencies
+# Ruby version
 
-* Configuration
+* ruby '2.7.1'
 
-* Database creation
+# Contact
 
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+<a href="mailto:ndinefojoseph@gmail.com">Mail me</a>
