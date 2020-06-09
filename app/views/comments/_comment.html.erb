@@ -1,0 +1,16 @@
+<div class="d-flex justify-content-start p-4 mt-4 border rounded">
+	<div class="d-flex pl-4 justify-content-between">
+		<div class="leading-normal">
+			<p class="text-gray-dark "><%= comment.user.username %> commented <%= time_ago_in_words(comment.created_at) %> ago</p>
+			<div class="text-gray-dark">
+				<%= sanitize comment.reply %>
+			</div>
+		</div>
+
+		<div>
+			<% if author_of(comment) %>
+				<%= link_to 'Delete', meeting_comment_path(comment.meeting, comment), method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-danger' %>
+			<% end %>
+		</div>
+	</div>
+</div>

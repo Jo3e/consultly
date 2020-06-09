@@ -1,0 +1,9 @@
+<%= month_calendar events: meetings do |date, meetings| %>
+	<%= date %>
+
+	<% meetings.each do |meeting| %>
+		<div>
+			<%= link_to meeting.name, meeting, class: 'nav-link' %>
+		</div>
+	<% end %>
+<% end %>

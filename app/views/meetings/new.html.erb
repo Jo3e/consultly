@@ -1,5 +1,10 @@
-<h1>New Meeting</h1>
+<div class="container m-auto px-4">
+	<h1 class="mt-4">Schedule New Session</h1>
 
-<%= render 'form', meeting: @meeting %>
+	<p class="text-gray-dark mb-5">
+		Schedule a new consulting session by choosing the best time that works for you below.
+	</p>
 
-<%= link_to 'Back', meetings_path %>
+	<%= render 'form', meeting: @meeting %>
+
+</div>

@@ -1,24 +1,44 @@
-<p id="notice"><%= notice %></p>
+<div class="container my-5 m-auto">
+	<div class="p-5 bg-white border border-gray rounded">
+		<div class="d-flex justify-content-between text-center mb-5">
+			<h1><%= @meeting.name %></h1>
 
-<p>
-  <strong>Name:</strong>
-  <%= @meeting.name %>
-</p>
+			<%= link_to 'Cancel session', meeting_path(@meeting), method: :delete, data: {confirm: 'Are you certain you want to cancel?'}, class: 'nav-link' if admin? %>
+		</div>
 
-<p>
-  <strong>Start time:</strong>
-  <%= @meeting.start_time %>
-</p>
+		<div class="border p-5 bg-gray-light mb-5 d-flex text-center justify-content-between">
+			<p class="border border-warning py-3 px-4 rounded">
+				Start time: <span class="font-weight-bold">
+								<%= readable_time(@meeting.start_time) %>
+							</span>
+			</p>
 
-<p>
-  <strong>End time:</strong>
-  <%= @meeting.end_time %>
-</p>
+			<div class="border-top border-info h1" style="border-style: dashed;"></div>
 
-<p>
-  <strong>User:</strong>
-  <%= @meeting.user_id %>
-</p>
+			<p class="border border-warning py-3 px-4 rounded">
+				End time: <span class="font-weight-bold">
+								<%= readable_time(@meeting.end_time) %>
+							</span>
+			</p>
+		</div>
 
-<%= link_to 'Edit', edit_meeting_path(@meeting) %> |
-<%= link_to 'Back', meetings_path %>
+		<h4>Comments</h4>
+
+		<hr class="border">
+
+		<% unless user_signed_in? %>
+			<div class="bg-gray-light rounded p-4 mt-4 text-center">
+				<p>
+					<%= link_to 'Login', new_user_session_path, class: 'nav-link' %> or 
+					<%= link_to 'Sign up', new_user_registration_path, class: 'nav-link' %> to comment
+				</p>
+			</div>
+		<% else %>
+			<%= render 'comments/form' %>
+		<% end %>
+
+		<div id="comments">
+			<%#= @meeting.comments %>
+		</div>
+	</div>
+</div>

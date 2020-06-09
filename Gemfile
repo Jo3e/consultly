@@ -58,7 +58,7 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
 gem "simple_calendar", "~> 2.0"
 
-gem 'trix', '~> 0.9.9'
+gem 'trix-rails', require: 'trix'
 
 gem 'bootstrap', '~> 4.5.0'
 

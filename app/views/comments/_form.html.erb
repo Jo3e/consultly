@@ -1,0 +1,12 @@
+<p class="my-2 ">Comment as <%= current_user.username %></p>
+
+<%= form_for([@meeting, @comment], remote: true) do |f| %>
+	<div class="relative">
+		<%= f.hidden_field :reply, class: 'form-control', placeholder: 'Add any notes or replies here' %>
+
+		<trix-editor input="comment_reply" id="comment_reply_trix" class="h-25 p-4"></trix-editor>	
+
+		<%= f.submit class: 'btn btn-sm my-4 btn-primary py-3 px-5' %>
+
+	</div>
+<% end %>
